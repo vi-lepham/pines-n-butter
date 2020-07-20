@@ -39,7 +39,7 @@ Inside of your project file create an .env.local file with the following content
 REACT_APP_API_KEY=<YOUR_API_KEY>
 ```
 
-Then run ```bash npm i``` and ```bash npm start``` to see the app in action.
+Then run ```npm i``` and ```npm start``` to see the app in action.
 
 ## Demo
 
