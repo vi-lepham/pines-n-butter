@@ -1,0 +1,48 @@
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    padding: 2% 3%;
+    background-color: yellow;
+    height: 100%;
+    .logo, .grocery, .favorites, .search-logo {
+        cursor: pointer;
+    }
+    .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .app-logo {
+            width: 40%;
+            margin-bottom: 7px;
+        }
+        h1 {
+            font-size: 20px;
+            font-family: 'Ranchers', cursive;
+        }
+    }
+    .grocery-n-favorites {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        
+        .grocery, .favorites {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            font-size: 13px;
+            text-align: center;
+            margin-bottom: 10%;
+            width: fit-content;
+        }
+    }
+    .search-logo, .grocery-logo, .heart-logo {
+        width: 20%;
+        min-width: 25px;
+        height: 7vh;
+    }
+}

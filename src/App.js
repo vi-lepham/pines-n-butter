@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Switch, Route } from 'react-router-dom';
+
+import AppProvider from './context/app.state';
+
+import Header from './components/header/Header';
+import PantryPage from './pages/pantry/PantryPage';
+import FavoritesPage from './pages/favorites/FavoritesPage';
+import GroceryListPage from './pages/grocery-list/GroceryListPage';
+import SearchPage from './pages/search/SearchPage';
+import RecipeDetailsPage from './pages/recipe-details/RecipeDetailsPage';
+
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <AppProvider>
+      <div className="App">
+        <div className="nav">
+          <Header />
+        </div>
+        <div className="main">
+          <Switch>
+            <Route exact path='/' component={PantryPage} />
+            <Route exact path='/favorites' component={FavoritesPage} />
+            <Route exact path='/grocerylist' component={GroceryListPage} />
+            <Route path='/search' component={SearchPage} />
+            <Route path='/recipe/:recipeId' component={RecipeDetailsPage} />
+          </Switch>
+        </div>
+      </div>
+    </AppProvider>
+  )
 }
 
 export default App;
