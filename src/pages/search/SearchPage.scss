@@ -1,5 +1,9 @@
 .search-page {
-    padding-top: 10%;
+    text-align: center;
+    .no-result {
+        margin-top: 5%;
+        color: grey;
+    }
 }
 .recipes-list {
     width: 100%;
@@ -11,8 +15,8 @@
 }
 
 .search-input {
-    width: 300px;
-    height: 25px;
-    font-size: 13px;
+    width: 350px;
+    height: 40px;
+    font-size: 15px;
     text-align: center;
 }

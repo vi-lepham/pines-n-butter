@@ -15,6 +15,7 @@ const FavoritesPage = ({ history }) => {
 
     return (
         <div className="favorites-page">
+            <h1>Your Favorites</h1>
             {
                 favs.length ? 
                 (

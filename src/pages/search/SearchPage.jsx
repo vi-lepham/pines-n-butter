@@ -37,7 +37,7 @@ const SearchPage = ({ history, match }) => {
                 isLoading ? 
                 <Spinner /> : 
                 (
-                    recipes && <RecipesList recipes={recipes} />
+                    recipes ? <RecipesList recipes={recipes} /> : <div className='no-result'>No result found</div>
                 )
             }
         </div>

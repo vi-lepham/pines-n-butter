@@ -8,14 +8,23 @@ import RecipeIngredients from '../recipe-ingredients/RecipeIngredients';
 import './RecipeDetails.scss';
 
 const RecipeDetails = ({ recipe }) => {
-    const { analyzedInstructions, extendedIngredients } = recipe;
-    
+    const { title, sourceName, analyzedInstructions, extendedIngredients } = recipe;
     return (
         <div className="recipe-details">
-            <RecipeSummary className='recipe-summary' recipe={recipe} />
-            <RecipeInstructions className='recipe-instructions' analyzedInstructions={analyzedInstructions} />
-            <RecipeIngredients className='recipe-ingredients' extendedIngredients={extendedIngredients} recipe={recipe} />
-            <FaveHeart className='fave-heart' recipe={recipe} />
+            <div className="title-block">
+                <div className="title">
+                    <h1>{title}</h1>
+                    <p>{sourceName}</p>
+                </div>
+                <FaveHeart recipe={recipe} />
+            </div>
+            <div className="content-block">
+                <RecipeSummary recipe={recipe} />
+                <div className="details">
+                    <RecipeInstructions analyzedInstructions={analyzedInstructions} />
+                    <RecipeIngredients extendedIngredients={extendedIngredients} recipe={recipe} />
+                </div>
+            </div>
         </div>
     )
 }

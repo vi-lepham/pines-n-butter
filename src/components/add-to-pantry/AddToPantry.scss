@@ -1,5 +1,11 @@
 .add-to-pantry {
     position: relative;
+    text-align: center;
+    .error-message {
+        margin-bottom: 5px;
+        color: red;
+        font-size: 15px;
+    }
 }
 
 .pantry-input {
@@ -8,3 +14,4 @@
     font-size: 15px;
     text-align: center;
 }
+

@@ -1,0 +1,33 @@
+.recipe-details {
+    h2 {
+        width: fit-content;
+        border-bottom: solid teal 4px;
+        margin-bottom: 10%;
+    }
+    .title-block {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        h1 {
+            text-align: left;
+            margin-bottom: 0;
+        }
+        .fave-heart {
+            
+            z-index: 99;
+            .fav-logo {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+    .content-block {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .details {
+            min-width: 400px;
+            width: 45%;
+        }
+    }
+}

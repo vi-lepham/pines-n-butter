@@ -1,3 +1,18 @@
 .recipe-instructions {
-    color: inherit;
+    margin-bottom: 15%;
+    .instructions {
+        li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5%;
+            span {
+                font-weight: bold;
+                margin-right: 5%;
+                font-size: 25px;
+            }
+        }
+    }
+    .empty-message {
+        color: grey;
+    }
 }

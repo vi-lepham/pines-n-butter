@@ -24,3 +24,12 @@ body {
     padding: 5%;
     padding-top: 80px;
 }
+
+ul {
+    list-style: none;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 5%;
+}

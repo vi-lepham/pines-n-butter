@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import AppContext from '../../context/app.context';
 
 import { ReactComponent as GroceryLogo } from '../../assets/grocery.svg';
-import GroceryItem from '../../components/grocery-item/GroceryItem';
+import GroceryItemsList from '../../components/grocery-items-list/GroceryItemsList';
 
 import './GroceryListPage.scss';
 
@@ -12,19 +12,18 @@ const GroceryListPage = () => {
 
     return (
         <div className="grocery-list-page">
+            <h1>Your Grocery List</h1>
             {
                 groceryItems.length ? (
-                    groceryItems.map(item => 
-                        <GroceryItem key={item.id} item={item} />)
+                    <GroceryItemsList groceryItems={groceryItems} />
                 ) : (
                     <div className="empty-grocery-list">
                         <div className="empty-message">
                             <p><span>Your grocery list is empty.</span>
-                                <br/>
                                 Add missing ingredients here to finish your favorite recipes!
                             </p>
                         </div>
-                        <GroceryLogo className='grocery-log'/>
+                        <GroceryLogo className='grocery-logo'/>
                         
                     </div>
                 )

@@ -13,6 +13,7 @@ const PantryPage = () => {
 
     return (
         <div className='pantry-page'>
+            <h1>Your Pantry</h1>
             <AddToPantry />
             {
                 ingredients.length ?

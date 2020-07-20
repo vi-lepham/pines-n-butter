@@ -12,24 +12,34 @@ const AddToPantry = () => {
     const [newIngredient, setNewIngredient] = useState('')
     const [input, setInput] = useState('')
     const [display, setDisplay] = useState(true)
+    const [error, setError] = useState(false)
+
     const { addIngredient, getSuggestions, suggestions } = useContext(AppContext);
 
     const getAutoComplete = suggestion => {
-        setInput(suggestion)
-        setNewIngredient({ id: uuidv4(), name: suggestion })
+        addIngredient({id: uuidv4(), name: suggestion});
+        setInput('')
+        setDisplay(false)
     }
 
     const handleChange = e => {
         setNewIngredient({ id: uuidv4(), name: e.target.value })
         setInput(e.target.value)
         getSuggestions(e.target.value)
+        
+        if (!e.target.value) {
+            setDisplay(false)
+        }
     }
 
     const handleSubmit = e => {
         e.preventDefault();
 
-        if (newIngredient.id) {
+        if (newIngredient) {
             addIngredient(newIngredient)
+        } else {
+            setError(true)
+            setTimeout(() => setError(false), 3000)
         }
         setInput('')
         setDisplay(false)
@@ -37,6 +47,7 @@ const AddToPantry = () => {
 
     return (
         <div className="add-to-pantry">
+            { error && <div className='error-message'>Please input something</div>}
             <FormInput 
                 className='pantry-input'
                 name='ingredient'

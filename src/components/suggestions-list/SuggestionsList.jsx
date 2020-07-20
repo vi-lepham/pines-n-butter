@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import './SuggestionsList.scss'
 
 const SuggestionsList = ({ suggestions, getAutoComplete }) => {
-    const filteredSuggestions = suggestions.splice(0, 7)
+    const filteredSuggestions = suggestions.splice(0, 7);
     return (
         <div className="suggestions-list">
         {

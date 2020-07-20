@@ -1,8 +1,52 @@
 .grocery-item {
-    .remove-button{
-        i {
-            cursor: pointer;
-            color: teal;
+    width: 45%;
+    min-width: 400px;
+    box-shadow: 5px 5px 7px rgba(100,100,100,0.2), 1px 1px 5px rgba(100,100,100,0.2);
+    border-radius: 10px;
+    padding: 2% 3%;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 2%;
+        border-bottom: solid #bdbdbd 0.5px;
+        margin-bottom: 5%;
+        .item {
+            text-transform: capitalize;
+            font-weight: 600;
+            font-size: 22px;
+        }
+        .remove-button{
+            i {
+                cursor: pointer;
+                color: teal;
+                font-size: 22px;
+            }
+        }
+    }
+    
+    .for-recipe {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        .recipe {
+            display: flex;
+            justify-content: space-between;
+            .recipe-thumbnail {
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                overflow: hidden;
+                margin-right: 10px;
+                img {
+                    height: 100%;
+                }
+            }
+            .recipe-title {
+                color: grey;
+            }
         }
     }
 }
