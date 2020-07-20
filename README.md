@@ -4,7 +4,7 @@ A recipe finder app that answers to the question: "Too lazy to shop. What can I 
 
 Built with React and utilizes recipe data from Spoonacular API + ingredient autocomplete from Tasty API.
 
-![Pines&Butter landing page](https://ibb.co/P6bvphZ)
+![Pines&Butter landing page](https://i.ibb.co/hmnJ5WR/2020-07-19-1.png)
 
 Check out the [deployed site](https://pinesandbutter.netlify.app/)
 
