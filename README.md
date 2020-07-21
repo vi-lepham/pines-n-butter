@@ -9,6 +9,7 @@ Built with React and utilizes recipe data from Spoonacular API + ingredient auto
 Check out the [deployed site](https://pinesandbutter.netlify.app/)
 
 ## Core packages
+
 1. Hooks, Context API - State management
 
 2. React-Router - Routing
@@ -18,6 +19,7 @@ Check out the [deployed site](https://pinesandbutter.netlify.app/)
 4. Axios - Network call
 
 ## Features
+
 1. Add/remove items in pantry
 
 2. Search recipes according to pantry items
@@ -33,6 +35,7 @@ Check out the [deployed site](https://pinesandbutter.netlify.app/)
 7. Pantry item input autocomplete
 
 ## Running locally
+
 Inside of your project file create an .env.local file with the following contents:
 
 ```txt
@@ -41,7 +44,26 @@ REACT_APP_API_KEY=<YOUR_API_KEY>
 
 Then run ```npm i``` and ```npm start``` to see the app in action.
 
-## Demo
+## Sections walkthrough
 
+### Add ingredients to Pantry with autocomplete suggestions
+
+![Add to Pantry](https://i.ibb.co/zVr1JbF/2020-07-20-1.png)
+
+### Search for recipes from Pantry ingredients
+
+![Pantry Recipe Search](https://i.ibb.co/SRL9sCg/2020-07-19-1.png)
+
+### Faved Recipes (Recipe Book)
+
+![Faved Recipe](https://i.ibb.co/XYtnD38/2020-07-20-9.png)
+
+### Recipe Details
+
+![Recipe Details](https://i.ibb.co/XYcyvx1/2020-07-20-4.png)
+
+### Grocery List
+
+![Grocery List](https://i.ibb.co/xGZ43PH/2020-07-20-8.png)
 
 
