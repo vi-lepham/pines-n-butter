@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-import AppContext from '../../context/app.context';
+import LocalDataContext from '../../context/local-data/LocalDataContext';
+import ApiDataContext from '../../context/api-data/ApiDataContext';
 
 import FormInput from '../form-input/FormInput';
 import SuggestionsList from '../suggestions-list/SuggestionsList';
@@ -14,10 +15,15 @@ const AddToPantry = () => {
     const [display, setDisplay] = useState(true)
     const [error, setError] = useState(false)
 
-    const { addIngredient, getSuggestions, suggestions } = useContext(AppContext);
+    const { addIngredient } = useContext(LocalDataContext);
+    const { suggestions, getSuggestions } = useContext(ApiDataContext);
 
     const getAutoComplete = suggestion => {
+
+        // Add ingredient to pantry
         addIngredient({id: uuidv4(), name: suggestion});
+
+        // Clear input and hide suggestion list
         setInput('')
         setDisplay(false)
     }
@@ -28,6 +34,8 @@ const AddToPantry = () => {
         getSuggestions(e.target.value)
         
         if (!e.target.value) {
+
+            // Hide suggestion list if input is back to empty
             setDisplay(false)
         }
     }
@@ -36,11 +44,17 @@ const AddToPantry = () => {
         e.preventDefault();
 
         if (newIngredient) {
+
+            // Add ingredient to pantry if not null
             addIngredient(newIngredient)
         } else {
+            
+            // Show error in 3s
             setError(true)
             setTimeout(() => setError(false), 3000)
         }
+        
+        // Clear input and hide suggestion list
         setInput('')
         setDisplay(false)
     }

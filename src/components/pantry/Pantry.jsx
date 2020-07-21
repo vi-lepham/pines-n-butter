@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 
-import AppContext from '../../context/app.context';
+import LocalDataContext from '../../context/local-data/LocalDataContext';
+import ApiDataContext from '../../context/api-data/ApiDataContext';
 
 import PantryItemsList from '../pantry-items-list/PantryItemsList';
 import CustomButton from '../custom-btn/CustomButton';
@@ -11,7 +12,8 @@ import './Pantry.scss';
 
 const Pantry = () => {
 
-    const { ingredients, recipes, isLoading, getRecipes } = useContext(AppContext);
+    const { ingredients } = useContext(LocalDataContext);
+    const { recipes, isLoading, getRecipes } = useContext(ApiDataContext);
 
     const ingredientName = ingredients.map(item => item.name); 
     const jointIngredientQuery = ingredientName.join(' ');

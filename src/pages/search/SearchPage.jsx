@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import AppContext from '../../context/app.context';
+import ApiDataContext from '../../context/api-data/ApiDataContext';
 
 import RecipesList from '../../components/recipes-list/RecipesList';
 import Spinner from '../../components/spinner/Spinner';
@@ -11,7 +11,7 @@ import './SearchPage.scss';
 
 const SearchPage = ({ history, match }) => {
     const [query, setQuery] = useState('')
-    const { isLoading, recipes, getRecipes } = useContext(AppContext);
+    const { isLoading, recipes, getRecipes } = useContext(ApiDataContext);
 
     const handleChange = e => {
         setQuery(e.target.value)

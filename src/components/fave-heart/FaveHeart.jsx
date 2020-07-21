@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import AppContext from '../../context/app.context';
+import LocalDataContext from '../../context/local-data/LocalDataContext';
 
 import { ReactComponent as HeartLogo } from '../../assets/heart2.svg';
 import { ReactComponent as FullHeartLogo } from '../../assets/fullheart.svg';
@@ -9,7 +9,7 @@ import './FaveHeart.scss';
 
 const FaveHeart = ({ recipe }) => {
     const { id, title, image } = recipe;
-    const { favs, addFav, removeFav } = useContext(AppContext);
+    const { favs, addFav, removeFav } = useContext(LocalDataContext);
 
     let faved = false;
     if (favs.length > 0) {

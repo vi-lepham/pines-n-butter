@@ -1,78 +1,29 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer } from 'react';
 import axios from 'axios';
 
-import { AppActionTypes } from './app.types';
-import AppReducer from './app.reducer';
-import AppContext from './app.context';
+import { AppActionTypes } from '../app.types';
+import ApiDataReducer from './ApiDataReducer';
+import ApiDataContext from './ApiDataContext';
 
 const {
-    ADD_INGREDIENT,
-    REMOVE_INGREDIENT,
-    ADD_FAV,
-    REMOVE_FAV,
-    ADD_GROCERY_ITEM,
-    REMOVE_GROCERY_ITEM,
+    SET_IS_LOADING,
     GET_RECIPES,
     GET_RECIPE_DETAILS,
-    GET_SUGGESTIONS,
-    SET_IS_LOADING
+    GET_SUGGESTIONS
 } = AppActionTypes;
 
+const ApiDataState = props => {
 
-const AppProvider = props => {
+    // Initial State
     const initialState = {
-        ingredients: JSON.parse(localStorage.getItem("ingredients")) || [],
-        favs: JSON.parse(localStorage.getItem("favs")) || [],
+        isLoading: false,
         recipes: [],
         recipe: null,
-        suggestions: [],
-        groceryItems: JSON.parse(localStorage.getItem("groceryItems")) || [],
-        isLoading: false
+        suggestions: []
     }
 
-    const [state, dispatch] = useReducer(AppReducer, initialState);
-
-    useEffect(() => {
-        localStorage.setItem("ingredients", JSON.stringify(state.ingredients));
-        localStorage.setItem("favs", JSON.stringify(state.favs));
-        localStorage.setItem("groceryItems", JSON.stringify(state.groceryItems));
-    }, [state.ingredients, state.favs, state.groceryItems])
-
-    // Add Ingredient
-    const addIngredient = ingredient => dispatch({
-        type: ADD_INGREDIENT,
-        payload: ingredient
-    })
-
-    // Remove Ingredient
-    const removeIngredient = id => dispatch({
-        type: REMOVE_INGREDIENT,
-        payload: id
-    })
-
-    // Add to Favorites
-    const addFav = fav => dispatch({
-        type: ADD_FAV,
-        payload: fav
-    })
-
-    // Remove from Favorites
-    const removeFav = id => dispatch({
-        type: REMOVE_FAV,
-        payload: id
-    })
-
-    // Add to grocery List
-    const addGroceryItem = item => dispatch({
-        type: ADD_GROCERY_ITEM,
-        payload: item
-    })
-
-    // Remove from Favorites
-    const removeGroceryItem = id => dispatch({
-        type: REMOVE_GROCERY_ITEM,
-        payload: id
-    })
+    // Use Reducer
+    const [state, dispatch] = useReducer(ApiDataReducer, initialState);
 
     // Set loading
     const setIsLoading = () => dispatch({
@@ -143,7 +94,7 @@ const AppProvider = props => {
                 "headers":{
                 "content-type":"application/octet-stream",
                 "x-rapidapi-host":"yummly2.p.rapidapi.com",
-                "x-rapidapi-key":"fa4731b032msh92369af037d7705p14770cjsn207b06bbcf4e",
+                "x-rapidapi-key":`${process.env.REACT_APP_API_KEY}`,
                 "useQueryString":true
                 },"params":{
                 "q":`${query}`
@@ -160,28 +111,20 @@ const AppProvider = props => {
         }
     }
 
-    return <AppContext.Provider 
+    return <ApiDataContext.Provider 
         value={{
-            ingredients: state.ingredients,
-            favs: state.favs,
+            isLoading: state.isLoading,
             recipes: state.recipes,
             recipe: state.recipe,
             suggestions: state.suggestions,
-            groceryItems: state.groceryItems,
-            isLoading: state.isLoading,
-            addIngredient,
-            removeIngredient,
-            addFav,
-            removeFav,
-            addGroceryItem,
-            removeGroceryItem,
             setIsLoading,
             getRecipes,
             getRecipeDetails,
             getSuggestions
-        }}>
-            {props.children}
-        </AppContext.Provider>
+        }}
+    >
+        {props.children}
+    </ApiDataContext.Provider>
 }
 
-export default AppProvider;
+export default ApiDataState;

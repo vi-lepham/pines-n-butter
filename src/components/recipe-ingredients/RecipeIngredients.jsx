@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 
-import AppContext from '../../context/app.context';
+import LocalDataContext from '../../context/local-data/LocalDataContext';
 
 import './RecipeIngredients.scss';
 
 const RecipeIngredients = ({ extendedIngredients, recipe }) => {
     const { id, title, image } = recipe;
-    const { addGroceryItem } = useContext(AppContext);
+    const { addGroceryItem } = useContext(LocalDataContext);
  
     return (
         <div className="recipe-ingredients">

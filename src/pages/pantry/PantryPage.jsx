@@ -1,15 +1,15 @@
 import React, { useContext } from 'react';
 
-import AppContext from '../../context/app.context';
-import { ReactComponent as KitchenLogo } from '../../assets/kitchen.svg';
+import LocalDataContext from '../../context/local-data/LocalDataContext';
 
+import { ReactComponent as KitchenLogo } from '../../assets/kitchen.svg';
 import AddToPantry from '../../components/add-to-pantry/AddToPantry';
 import Pantry from '../../components/pantry/Pantry';
 
 import './PantryPage.scss';
 
 const PantryPage = () => {
-    const { ingredients } = useContext(AppContext);
+    const { ingredients } = useContext(LocalDataContext);
 
     return (
         <div className='pantry-page'>

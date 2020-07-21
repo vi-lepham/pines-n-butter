@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import AppContext from '../../context/app.context';
+import LocalDataContext from '../../context/local-data/LocalDataContext';
 
 import './GroceryItem.scss';
 
 const GroceryItem = ({ item, history }) => {
     const { id, name, recipe } = item;
-    const { removeGroceryItem } = useContext(AppContext);
+    const { removeGroceryItem } = useContext(LocalDataContext);
 
     return (
         <div className="grocery-item">

@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 
-import AppContext from '../../context/app.context';
+import LocalDataContext from '../../context/local-data/LocalDataContext';
 
 import './PantryItem.scss';
 
 const PantryItem = ({ item }) => {
     const { name, id } = item;
-    const { removeIngredient } = useContext(AppContext);
+    const { removeIngredient } = useContext(LocalDataContext);
 
     return (
         <div className="pantry-item">

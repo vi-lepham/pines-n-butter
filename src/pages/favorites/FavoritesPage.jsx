@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import AppContext from '../../context/app.context';
+import LocalDataContext from '../../context/local-data/LocalDataContext';
 
 import { ReactComponent as HeartLogo } from '../../assets/heart.svg';
 import CustomButton from '../../components/custom-btn/CustomButton';
@@ -11,7 +11,7 @@ import './FavoritesPage.scss';
 
 const FavoritesPage = ({ history }) => {
     
-    const { favs } = useContext(AppContext);
+    const { favs } = useContext(LocalDataContext);
 
     return (
         <div className="favorites-page">

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import AppContext from '../../context/app.context';
+import LocalDataContext from '../../context/local-data/LocalDataContext';
 
 import { ReactComponent as GroceryLogo } from '../../assets/grocery.svg';
 import GroceryItemsList from '../../components/grocery-items-list/GroceryItemsList';
@@ -8,7 +8,7 @@ import GroceryItemsList from '../../components/grocery-items-list/GroceryItemsLi
 import './GroceryListPage.scss';
 
 const GroceryListPage = () => {
-    const { groceryItems } = useContext(AppContext);
+    const { groceryItems } = useContext(LocalDataContext);
 
     return (
         <div className="grocery-list-page">
