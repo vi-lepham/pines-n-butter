@@ -48,7 +48,7 @@ Then run ```npm i``` and ```npm start``` to see the app in action.
 
 ### Add ingredients to Pantry with autocomplete suggestions
 
-![Add to Pantry](https://i.ibb.co/zVr1JbF/2020-07-20-1.png)
+![Add to Pantry](https://i.ibb.co/2S0DD1b/2020-07-20-1.png)
 
 ### Search for recipes from Pantry ingredients
 
@@ -66,4 +66,7 @@ Then run ```npm i``` and ```npm start``` to see the app in action.
 
 ![Grocery List](https://i.ibb.co/xGZ43PH/2020-07-20-8.png)
 
+### Search section for dish name/style
+
+![Free Search Section](https://i.ibb.co/jGQPNRB/2020-07-20-11.png)
 
