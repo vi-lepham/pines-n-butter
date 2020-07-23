@@ -8,8 +8,12 @@
     left: 0;
     z-index: 1;
     .suggestion {
+        width: 100%;
         padding: 1% 0;
         cursor: pointer;
+        font-weight: 400;
+        color: black;
+        background-color: white;
         &:focus, &:active, &:hover {
             background-color: rgba(0, 128, 128, 0.5);
         }

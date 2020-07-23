@@ -9,12 +9,17 @@ const SuggestionsList = ({ suggestions, getAutoComplete }) => {
         <div className="suggestions-list">
         {
             filteredSuggestions.map(suggestion => 
-                <div className="suggestion" key={uuidv4()} onClick={e => getAutoComplete(e.target.textContent)}>
+                <button 
+                    className="suggestion" 
+                    key={uuidv4()} 
+                    onClick={e => getAutoComplete(e.target.textContent)}
+                    tabindex="0"
+                >
                     {suggestion}
-                </div>
+                </button>
             )
         }
-        </div>
+        </div> 
     );
 }
  

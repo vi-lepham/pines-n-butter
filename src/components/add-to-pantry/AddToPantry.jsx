@@ -37,6 +37,11 @@ const AddToPantry = () => {
 
             // Hide suggestion list if input is back to empty
             setDisplay(false)
+        } else {
+            setDisplay(true)
+            setNewIngredient({ id: uuidv4(), name: e.target.value })
+            setInput(e.target.value)
+            getSuggestions(e.target.value)
         }
     }
 
@@ -70,6 +75,7 @@ const AddToPantry = () => {
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
                 placeholder='Add an item to your pantry!'
+                tabindex="0"
             />
             {
                 suggestions && display && <SuggestionsList suggestions={suggestions} getAutoComplete={getAutoComplete} />
