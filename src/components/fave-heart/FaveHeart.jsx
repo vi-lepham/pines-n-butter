@@ -12,10 +12,10 @@ const FaveHeart = ({ recipe }) => {
     const { favs, addFav, removeFav } = useContext(LocalDataContext);
 
     let faved = false;
+    const favedItemsIds = favs.map(fav => fav.id);
+
     if (favs.length > 0) {
-        if (favs.map(fav => fav.id).includes(id)) {
-            faved = true;
-        } 
+        favedItemsIds.includes(id) ? (faved = true) : return;
     }
 
     const addToFav = () => {
