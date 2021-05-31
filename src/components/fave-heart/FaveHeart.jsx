@@ -14,9 +14,9 @@ const FaveHeart = ({ recipe }) => {
     let faved = false;
     const favedItemsIds = favs.map(fav => fav.id);
 
-    if (favs.length > 0) {
-        favedItemsIds.includes(id) ? (faved = true) : return;
-    }
+    if (favs.length && favedItemsIds.includes(id)) {
+        faved = true
+    } else return
 
     const addToFav = () => {
         faved = true;
